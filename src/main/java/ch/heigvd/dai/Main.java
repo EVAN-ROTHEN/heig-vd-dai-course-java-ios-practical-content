@@ -9,8 +9,8 @@ public class Main {
   public static void main(String[] args) {
     // Define command name - source: https://stackoverflow.com/a/11159435
     String jarFilename =
-        new File(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath())
-            .getName();
+            new File(Main.class.getProtectionDomain().getCodeSource().getLocation().getPath())
+                    .getName();
 
     // Create root command
     Root root = new Root();
@@ -18,10 +18,10 @@ public class Main {
     // Calculate execution time for root command and its subcommands
     Long start = System.nanoTime();
     int exitCode =
-        new CommandLine(root)
-            .setCommandName(jarFilename)
-            .setCaseInsensitiveEnumValuesAllowed(true)
-            .execute(args);
+            new CommandLine(root)
+                    .setCommandName(jarFilename)
+                    .setCaseInsensitiveEnumValuesAllowed(true)
+                    .execute(args);
     Long end = System.nanoTime();
 
     if (exitCode == 0) {
